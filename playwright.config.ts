@@ -30,24 +30,48 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    //capture video & take screenshot
+    video:'on',
+    screenshot:'on',
+
+    //it will take common for all browser
+    headless: false,
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
+      //name: 'chromium',
+      //use: { ...devices['Desktop Chrome']},
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chromium'] ,
+      viewport: null,
+      launchOptions: {
+      args: ["--start-maximized"]
+      } 
+      }
+        //,channel:'chrome',
+        // launchOptions:{args:['--start']},viewport:null // here i have used specific channel that is chrome or you can use 'msedge'
+      //launchOptions:['--start] - to maximise the screen
+      //  name: 'chromium',
+      // use: { ...devices['Desktop Chromium'] ,
+      // viewport: null,
+      // launchOptions: {
+      //   args: ["--start-maximized"]
+      //   } 
+      //  }
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
