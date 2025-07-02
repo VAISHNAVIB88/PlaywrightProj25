@@ -63,10 +63,10 @@ export default defineConfig({
       //  }
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+  //  {
+  //   name: 'firefox',
+  //   use: { ...devices['Desktop Firefox'] },
+  //   },
 
     // {
     //   name: 'webkit',
@@ -84,10 +84,10 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    // {
+    //  {
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
+    //  },
     // {
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
